@@ -1,9 +1,9 @@
-#cat source.txt | findstr "href='/talks/" | -replace ("<a class=' ga-link' data-ga-context='talks' href='/","")} | -replace ('>', "")} > Ted_link.txt
-
 import webbrowser
 from selenium import webdriver
 import time
 
+
+#cat source.txt | findstr "href='/talks/" | -replace ("<a class=' ga-link' data-ga-context='talks' href='/","")} | -replace ('>', "")} > Ted_link.txt
 def link_maker(file):
   with open(file) as f:
     for lines in f.readlines():
