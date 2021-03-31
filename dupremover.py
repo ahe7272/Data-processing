@@ -31,25 +31,15 @@ with open(file_2, 'r') as f2:
             dup_index.append(lines2.index(i))   
         count2 += 1      
 
-print(set(dup_index).reverse())
-"""
-for i in set(dup_index.sort(reverse=True)):
-    print(lines1[i])
-    print(lines2[i])
-
-
-distinctfile1 = []
-distinctfile2 = []
-for line in joined:
-    distinctfile1.append(line.split('\t')[-1])
-    distinctfile2.append(line.split('\t')[0])
+for i in list(set(dup_index))[::-1]:
+    del lines1[i]
+    del lines2[i]
 
 fname1 = open(input('첫번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w')
 fname2 = open(input('두번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w')
 
-fname1.write(str('\n'.join(distinctfile1)))
+fname1.write(str('\n'.join(lines1)))
 fname1.close()        
 
-fname2.write(str('\n'.join(distinctfile2)))
+fname2.write(str('\n'.join(lines2)))
 fname2.close()  
-"""
