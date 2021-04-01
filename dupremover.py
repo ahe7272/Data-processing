@@ -22,30 +22,31 @@ with open(file_1, 'r', encoding='UTF8') as f1:
             dup_index.append(lines1.index(i))   
         count1 += 1
         if count1 == round(total1*0.01):
-            print('중복 줄 제거를 시작합니다.')            
+            print('중복 줄을 찾고 있습니다...')            
         elif count1 == round(total1*0.1):
-            print('작업을 1/10 완료 했습니다.') 
+            print('파일의 1/10를 확인했습니다.') 
         elif count1 == round(total1*0.2):
-            print('작업을 2/10 완료 했습니다.')
+            print('파일의 2/10를 확인했습니다.')
         elif count1 == round(total1*0.3):
-            print('작업을 3/10 완료 했습니다.')
+            print('파일의 3/10를 확인했습니다.')
         elif count1 == round(total1*0.4):
-            print('작업을 4/10 완료 했습니다.')            
+            print('파일의 4/10를 확인했습니다.')            
         elif count1 == round(total1*0.5):
-            print('작업을 5/10 완료 했습니다.')  
+            print('파일의 5/10를 확인했습니다.')  
         elif count1 == round(total1*0.6):
-            print('작업을 6/10 완료 했습니다.')
+            print('파일의 6/10를 확인했습니다.')
         elif count1 == round(total1*0.7):
-            print('작업을 7/10 완료 했습니다.')
+            print('파일의 7/10를 확인했습니다.')
         elif count1 == round(total1*0.8):
-            print('작업을 8/10 완료 했습니다.')     
+            print('파일의 8/10를 확인했습니다.')     
         elif count1 == round(total1*0.9):
-            print('작업을 9/10 완료 했습니다.')
+            print('파일의 9/10를 확인했습니다.')
         elif count1 == total1:
-            print('첫번째 파일 작업을 모두 완료 했습니다.')
+            print('첫번째 파일을 모두 확인 했습니다.')
 
 distinctlines2 = []
 count2 = 0
+print()
 
 with open(file_2, 'r', encoding='UTF8') as f2:  
     global total2
@@ -61,34 +62,34 @@ with open(file_2, 'r', encoding='UTF8') as f2:
             dup_index.append(lines2.index(i))   
         count2 += 1      
         if count2 == round(total2*0.01):
-            print('중복 줄 제거를 시작합니다.')            
+            print('중복 줄을 찾고 있습니다...')            
         elif count2 == round(total2*0.1):
-            print('작업을 1/10 완료 했습니다.') 
+            print('파일의 1/10를 확인했습니다.') 
         elif count2 == round(total2*0.2):
-            print('작업을 2/10 완료 했습니다.')
+            print('파일의 2/10를 확인했습니다.')
         elif count2 == round(total2*0.3):
-            print('작업을 3/10 완료 했습니다.')
+            print('파일의 3/10를 확인했습니다.')
         elif count2 == round(total2*0.4):
-            print('작업을 4/10 완료 했습니다.')            
+            print('파일의 4/10를 확인했습니다.')            
         elif count2 == round(total2*0.5):
-            print('작업을 5/10 완료 했습니다.')  
+            print('파일의 5/10를 확인했습니다.')  
         elif count2 == round(total2*0.6):
-            print('작업을 6/10 완료 했습니다.')
+            print('파일의 6/10를 확인했습니다.')
         elif count2 == round(total2*0.7):
-            print('작업을 7/10 완료 했습니다.')
+            print('파일의 7/10를 확인했습니다.')
         elif count2 == round(total2*0.8):
-            print('작업을 8/10 완료 했습니다.')     
+            print('파일의 8/10를 확인했습니다.')     
         elif count2 == round(total2*0.9):
-            print('작업을 9/10 완료 했습니다.')
+            print('파일의 9/10를 확인했습니다.')
         elif count2 == total2:
-            print('첫번째 파일 작업을 모두 완료 했습니다.')
+            print('두번째 파일을 모두 확인 했습니다.')
 
-for i in list(set(dup_index))[::-1]:
+for i in list(sorted(set(dup_index)))[::-1]:
     del lines1[i]
     del lines2[i]
 
-fname1 = open(input('첫번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w')
-fname2 = open(input('두번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w')
+fname1 = open(input('첫번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w', encoding='UTF8')
+fname2 = open(input('두번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w', encoding='UTF8')
 
 fname1.write(str('\n'.join(lines1)))
 fname1.close()        
