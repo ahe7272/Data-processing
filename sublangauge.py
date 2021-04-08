@@ -61,3 +61,5 @@ def openpage():
     driver.find_element_by_xpath(subtitle).click()
     return driver
 
+def chosenlan():
+    return sublan

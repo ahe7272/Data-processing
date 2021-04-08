@@ -22,7 +22,7 @@ def links():
     else : 
         print(response.status_code)
     for i in link_list[::2]:
-        full_url = 'https://www.ted.com' + re.sub("?langauge.*", '', str(i))
+        full_url = 'https://www.ted.com' +re.sub("\?language.*$", "", i)
         full_links.append(full_url)
     return full_links
 
