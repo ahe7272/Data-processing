@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 import webbrowser
 from selenium import webdriver
 import time
-import sublangauge
+import openpage
 import re
 
 def links():
-    driver = sublangauge.openpage()
+    driver = openpage.open_page()
     url = driver.current_url
     driver.close()
     response = requests.get(url)
