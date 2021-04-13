@@ -11,11 +11,12 @@ def join(file1, file2):
     for i in range(len(lines1)):
         joined.append((lines1[i]+'\t'+lines2[i]))
 
-    save = open(input("저장할 파일명을 확장명과 함께 입력해 주세요 "),'w')
+    save = open(savename,'w')
     save.write(str('\n'.join(joined)))
     save.close()  
 
 file_1 = input("병합할 첫번째 파일 명을 확장명과 함께 입력해 주세요 ")
 file_2 = input("병합할 두번째 파일 명을 확장명과 함께 입력해 주세요 ")
+savename = input("저장할 파일명을 확장명과 함께 입력해 주세요 ")
 
 join(file_1, file_2)

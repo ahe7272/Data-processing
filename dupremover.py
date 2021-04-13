@@ -1,6 +1,9 @@
 file_1 = input('처리할 첫번째 언어 파일명을 확장명과 함께 입력해 주세요 ')
 file_2 = input('처리할 두번째 언어 파일명을 확장명과 함께 입력해 주세요 ')
 
+fname1 = open(input('첫번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w', encoding='UTF8')
+fname2 = open(input('두번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w', encoding='UTF8')
+
 distinctlines1 = []
 count1 = 0
 dup_index = []
@@ -87,9 +90,6 @@ with open(file_2, 'r', encoding='UTF8') as f2:
 for i in list(sorted(set(dup_index)))[::-1]:
     del lines1[i]
     del lines2[i]
-
-fname1 = open(input('첫번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w', encoding='UTF8')
-fname2 = open(input('두번째 언어쌍 파일을 저장할 파일명을 지정해 주세요(확장명까지 입력해 주세요) '),'w', encoding='UTF8')
 
 fname1.write(str('\n'.join(lines1)))
 fname1.close()        
