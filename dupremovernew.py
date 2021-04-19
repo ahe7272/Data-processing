@@ -19,8 +19,8 @@ landict2 = {}
 for i in range(len(key)):
     landict2[val[i]] = key[i]
     
-file1final = list(landict.keys())
-file2final = list(landict.values())
+file1final = list(landict2.keys())
+file2final = list(landict2.values())
 
 save1.write(str('\n'.join(file2final)))
 save1.close()        
