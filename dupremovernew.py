@@ -17,7 +17,7 @@ key = list(landict.keys())
 val = list(landict.values())
 landict2 = {}
 for i in range(len(key)):
-    landict[val[i]] = key[i]
+    landict2[val[i]] = key[i]
     
 file1final = list(landict.keys())
 file2final = list(landict.values())
